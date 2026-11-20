@@ -10,7 +10,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Scanner;
 
 public class ConsultaCep {
 
@@ -18,16 +17,7 @@ public class ConsultaCep {
 
 		System.out.println("RICARDO LORRAN FREIRE SANTOS - RA 0025400");
 
-		Scanner leitor = new Scanner(System.in);
-		System.out.print("Digite o CEP: ");
-		String cep = leitor.nextLine().replaceAll("[^0-9]", ""); // TIRA TRAÇO, PONTO E ESPAÇO
-		leitor.close();
-
-		if (cep.length() != 8) {
-			System.out.println("CEP inválido. O CEP precisa ter 8 números.");
-			return;
-		}
-
+		String cep = "72445010";
 		String url = "https://viacep.com.br/ws/" + cep + "/json/";
 
 		try {
